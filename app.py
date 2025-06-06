@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify
-import graphene
 import requests
 
 app = Flask(__name__)
