@@ -23,5 +23,6 @@ def graphql_proxy():
     return "GraphQL proxy is alive!", 200
 
 if __name__ == "__main__":
-    # Required for Render to detect and expose the service
-    app.run(host="0.0.0.0", port=10000)
+    import os
+    port = int(os.environ.get("PORT", 10000))  # use Render-assigned port if present
+    app.run(host="0.0.0.0", port=port)
